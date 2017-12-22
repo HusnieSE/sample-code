@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Shelf extends Component {
     constructor(props) {
         super(props)
-
+        const clickItem = this.clickItem.bind(this)
         this.state = {
             shelfItems: [
                 "Shampoo",
@@ -11,11 +11,16 @@ class Shelf extends Component {
                 "yogurt"
             ]
         }
-    } 
+    }
+
+    clickItem(item) {
+
+        this.props.addItem(item);
+    }
 
     render() {
         const shelfItem = this.state.shelfItems.map((item, index) => {
-            return <li key={index}> <button> + </button> {item} </li>
+            return <li key={index}> <button onClick = {()=>this.clickItem(item)}> + </button> {item} </li>
         })
 
         return (
