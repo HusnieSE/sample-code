@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import VisibleHeader from './components/header';
-import VisibleContainer from './components/container';
 
+import Cart from './components/cart';
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <VisibleHeader />
-      <VisibleContainer />
+        <div className="App-intro">
+          <Cart />
+        </div>
       </div>
     );
   }
